@@ -29,7 +29,7 @@ func (userRepo *UserRepositoryImpl) GetAll() []model.User {
 // GetById implements UserRepository.
 func (userRepo *UserRepositoryImpl) GetById(id int) (user model.User, err error) {
 	result := userRepo.Db.Find(&user, id)
-	if result.Error != nil {
+	if result != nil {
 		return user, nil
 	} else {
 		return user, errors.New("user is not found")
