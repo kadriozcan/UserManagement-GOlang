@@ -10,13 +10,14 @@ import (
 	"github.com/user_management_system/service"
 )
 
+// has one field : userService
 type UserController struct {
 	userService service.UserService
 }
 
-func NewUserController(servie service.UserService) *UserController {
+func NewUserController(service service.UserService) *UserController {
 	return &UserController{
-		userService: servie,
+		userService: service,
 	}
 }
 
