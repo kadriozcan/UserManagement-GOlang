@@ -3,15 +3,12 @@ package router
 import (
 	"net/http"
 
-	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"github.com/user_management_system/controller"
 )
 
 func NewRouter(userController *controller.UserController) *gin.Engine {
 	router := gin.Default()
-
-	router.Use(cors.Default())
 
 	router.GET("", func(ctx *gin.Context) {
 		ctx.JSON(http.StatusOK, "welcome home")
