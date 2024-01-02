@@ -51,6 +51,7 @@ func (userService *UserServiceImpl) Delete(id int) {
 func (userService *UserServiceImpl) Update(user model.User) {
 	userData, err := userService.UserRepository.GetById(user.ID)
 	helper.ErrorPanic(err)
+	userData.Username = user.Username
 	userData.FirstName = user.FirstName
 	userData.LastName = user.LastName
 	userData.PhoneNumber = user.PhoneNumber
