@@ -1,31 +1,39 @@
-# User Management System - Frontend
+# User Management System
 
 ## Introduction
 
-This is a frontend project for a User Management System, written in React & Next.js. It provides a user interface for creating, reading, updating, and deleting users.
+This is a backend project for a User Management System, written in Go. It provides a RESTful API for creating, reading, updating, and deleting users in a SQLite database.
+
+## Built With
+
+- Go - The programming language used
+- Gin - The web framework used
+- GORM - The ORM library used
+- SQLite - The database used
 
 ## Getting Started
 
 ### Prerequisites
 
-- Node.js
-- npm or yarn
+- Go 1.16 or later
+- SQLite
 
 ### Installation
 
 1. Clone the repository to your local machine.
-2. Install the necessary npm packages by running `npm install` or `yarn`.
+2. Install the necessary Go packages by running `go get`.
 
 ## Running the Application
 
-1. Run `npm run dev` or `yarn dev` in the root directory of the project.
-2. The application will start on `localhost:3000`.
+1. Run `go run main.go` in the root directory of the project.
+2. The server will start on `localhost:8008`.
 
 ## Usage
 
-The application provides a user interface for managing users. You can:
+The application provides the following endpoints:
 
-- View all users
-- Add a new user
-- Edit an existing user
-- Delete a user
+- `GET /users`: Fetch all users.
+- `GET /users/:id`: Fetch a user by ID.
+- `POST /users`: Create a new user.
+- `PATCH /users/:id`: Update a user by ID.
+- `DELETE /users/:id`: Delete a user by ID.
